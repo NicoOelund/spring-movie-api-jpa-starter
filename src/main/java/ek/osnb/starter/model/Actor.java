@@ -1,9 +1,9 @@
 package ek.osnb.starter.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Actor {
@@ -13,6 +13,9 @@ public class Actor {
 
     private String name;
     private Integer birthYear;
+
+    @ManyToMany(mappedBy = "actors")
+    private List<Movie> movies = new ArrayList<>();
 
     public Actor() {}
 
