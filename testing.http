@@ -29,3 +29,46 @@ POST http://localhost:8080/api/movies/1/actors/2
 
 ### VERIFY MOVIE WITH ACTORS
 GET http://localhost:8080/api/movies/1
+
+### ADD MOVIE
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
+{
+  "title": "The Dark Knight",
+  "releaseYear": 2008,
+  "genre": "Action",
+  "rating": {"score": 9.0, "voteCount": 2500000}
+}
+
+### ADD MOVIE DETAILS
+POST http://localhost:8080/api/movies/1/details
+Content-Type: application/json
+
+{
+  "plot": "Batman faces the Joker in a battle for Gotham soul.",
+  "budget": 185000000,
+  "runtime": 152,
+  "productionCompany": "Warner Bros"
+}
+
+### VERIFY MOVIE WITH DETAILS
+GET http://localhost:8080/api/movies/1
+
+### OPTIONAL: DELETE MOVIE WITH CASCADE
+DELETE http://localhost:8080/api/movies/1
+
+### ADD MOVIE
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
+{
+  "title": "The Matrix",
+  "releaseYear": 1999,
+  "genre": "Sci-Fi",
+  "ratingScore": 8.7,
+  "ratingVoteCount": 1800000
+}
+
+### VERIFY MOVIE WITH DETAILS
+GET http://localhost:8080/api/movies/1
